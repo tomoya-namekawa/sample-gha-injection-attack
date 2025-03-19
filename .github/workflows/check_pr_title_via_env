@@ -1,4 +1,4 @@
-name: Check PR title
+name: Check PR title via env.PR_TITLE
 on:
   pull_request:
 env:
