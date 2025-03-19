@@ -2,7 +2,7 @@
 - 前提: GitHub Actionsでのrunで `${{ github.event.pull_request.title }}` などを直接使うとインジェクション攻撃が可能なので環境変数を使うべき
   - https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions#using-starter-workflows-for-code-scanning
 
-- しかし、たとえ環境変数に入れても、 `${{ env.PR_TITLE }}` のように `env.`でアクセスすると攻撃が成り立ってしまう
+- しかし、環境変数に入れていても `${{ env.PR_TITLE }}` のように環境変数に対して `env.`でアクセスすると攻撃が成り立ってしまう
 
 - https://github.com/tomoya-namekawa/sample-gha-injection-attack/actions/workflows/check_pr_title_via_env.yml
   - <img width="931" alt="image" src="https://github.com/user-attachments/assets/0d426e81-cd8b-4ebb-a8e7-867f8b801f23" />
