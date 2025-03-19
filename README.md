@@ -31,3 +31,7 @@
               exit 1
               fi
     ```
+
+- `${{ env.PR_TITLE }}`ではなく環境変数から参照すると防げる
+  - <img width="517" alt="image" src="https://github.com/user-attachments/assets/0f7cae79-9778-493b-998f-177506dd3f85" />
+
