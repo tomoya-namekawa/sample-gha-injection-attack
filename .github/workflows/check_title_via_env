@@ -1,0 +1,20 @@
+name: Check PR title
+on:
+  pull_request:
+env:
+  PR_TITLE: ${{ github.event.pull_request.title }}
+
+jobs:
+  check-pr-title:
+    name: Check PR title
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          title="${{ env.PR_TITLE }}"
+          if [[ $title =~ ^octocat ]]; then
+          echo "PR title starts with 'octocat'"
+          exit 0
+          else
+          echo "PR title did not start with 'octocat'"
+          exit 1
+          fi
